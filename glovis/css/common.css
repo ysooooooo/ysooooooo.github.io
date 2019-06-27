@@ -942,7 +942,7 @@ footer > .bottom > .mark > *:nth-child(2){margin-right: 0;}
 @media screen and (max-width:758px){
 /* m_header start */
 header{display: none;}
-.mheader{display: block;width: 100%;}
+.mheader{display: block;}
 .mheader > h1{height: 50px;}
 .mheader > h1 > a > img{height: 17px;}
 .mheader > .open_btn > img{height: 13px;}
