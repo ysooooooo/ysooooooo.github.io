@@ -221,7 +221,7 @@ window.onload = function(){
 //------------------------------------------------------------------------
 	//메인 배경색 애니메이션효과
 
-	var htmlTop = document.querySelector("html");
+	var html = document.querySelector("html");
 	var partnerBack = document.querySelector(".main_partner > .back")
 	var partnerMask = document.querySelector(".main_partner > .mask")
 	var recruitBack = document.querySelector(".recruit > .back")
@@ -232,11 +232,12 @@ window.onload = function(){
 	var mainEtc = document.querySelector(".main_etc")
 	window.addEventListener("scroll", startMainCon);
 	function startMainCon(){
-		if(htmlTop.scrollTop+500 > mainPartner.offsetTop){
+		console.log(html.scrollTop)
+		if(html.scrollTop+500 > mainPartner.offsetTop){
 			partnerBack.classList.add("on");
 			partnerMask.classList.add("on");
 		}
-		if(htmlTop.scrollTop+530 > mainEtc.offsetTop){
+		if(html.scrollTop+530 > mainEtc.offsetTop){
 			recruitBack.classList.add("on");
 			recruitMask.classList.add("on");
 			rugbyBack.classList.add("on");
