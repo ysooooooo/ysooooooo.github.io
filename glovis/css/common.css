@@ -65,7 +65,7 @@ hr {
 /* layout */
 
 /* common */
-.wrap{width: 100%;overflow: hidden;}
+.wrap{width: 100%;overflow:hidden;position: relative;}
 .clearfix::after{content: ''; clear: both; display: block;}
 img{vertical-align: top;}
 

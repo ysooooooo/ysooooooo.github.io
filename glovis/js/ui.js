@@ -278,7 +278,7 @@ window.onload = function(){
 			}
 		}
 	}
-	function hoverLight(e){
+	function hoverLight(){
 		for(var i=0;i<hoverBtn.length;i++){
 			hoverBtn[i].classList.remove("off");
 		}				
