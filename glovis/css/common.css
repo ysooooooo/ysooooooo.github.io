@@ -190,7 +190,7 @@ header.on {height: 370px;background-color: white;transition: all 0.2s ease;}
 /* body{height: 573px; overflow: hidden;} */
 .mheader{
 	display: none;
-	overflow: hidden;
+	/* overflow: hidden; */
 	position: absolute;
     top: 0;
     left: 0;
@@ -203,7 +203,6 @@ header.on {height: 370px;background-color: white;transition: all 0.2s ease;}
 .mheader > h1 > a{display: inline-block; margin-top: 19px;}
 .mheader > .open_btn{position: absolute; right: 15px; top: 35%;height: 13px;}
 .mheader > .menu{
-	
 	position: absolute;
 	top: 0;
 	left: 100%;
