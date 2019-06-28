@@ -6,12 +6,23 @@ window.onload = function(){
 		$(".bglist").bxSlider({});
 	});
 
-    var curtain = document.querySelector(".curtain");
+    var curtain = document.querySelector(".curtain"); //전체 어두워지는 태그설정
+
+	navHover();
+	langClick();
+	mobileMenu();
+	mobileMenuSub();
+	popOpen();
+	popClose();
+	mobileVideo();
+	mainScroll();
+	mainBackAni();
+	partnerHover();
+	familysite();
 
 //------------------------------------------------------------------------
 	//헤더 메뉴 호버하면 서브메뉴 열기
 
-	navHover();
 	function navHover(){ 
 		var header = document.querySelector("header");
 		var header_tab = header.querySelector(".header_tab");
@@ -39,7 +50,6 @@ window.onload = function(){
 //------------------------------------------------------------------------
 	//lang 클릭기능하면 서브메뉴 열기
 
-	langClick(); 
 	function langClick(){
 		var lang = document.querySelector(".lang");
 		lang.addEventListener("click", lang_open)
@@ -55,7 +65,6 @@ window.onload = function(){
 //------------------------------------------------------------------------
 	//mobile 헤더 메뉴 열기
 
-	mobileMenu();
 	function mobileMenu(){
 		var htmlEl = document.querySelector("html");
 		var mMenu = document.querySelector(".mheader > .menu");
@@ -92,7 +101,6 @@ window.onload = function(){
 //------------------------------------------------------------------------
 	//mobile 헤더 메뉴에서 서브 열기
 
-	mobileMenuSub();
 	function mobileMenuSub(){
 		var mHeader_tab = document.querySelector(".mHeader_tab");
 		
@@ -127,12 +135,13 @@ window.onload = function(){
 //------------------------------------------------------------------------
 	// overview pop 열기
 
-	popOpen();
 	function popOpen(){
 		var popOpenBtn = document.querySelector(".text_overview > ul");
 		var mobilePopOpenBtn = document.querySelector(".m_overview > ul");
+
 		popOpenBtn.addEventListener("click", openPop);
 		mobilePopOpenBtn.addEventListener("click", openMobilePop);
+
 		function openPop(e){
 			e.preventDefault();
 			if(e.target.tagName !== 'A'){
@@ -160,7 +169,6 @@ window.onload = function(){
 //------------------------------------------------------------------------
 	// overview pop 닫기
 
-	popClose();
 	function popClose(){
 		var popCloseBtn = document.querySelectorAll(".pop_close");
 
@@ -180,7 +188,6 @@ window.onload = function(){
 //------------------------------------------------------------------------
 	//모바일버전 재생버튼 클릭하면 동영상페이지로 이동
 
-	mobileVideo();
 	function mobileVideo(){
 		var playBtn = document.querySelector(".playbtn");
 		playBtn.addEventListener("click", playVideo);
@@ -196,12 +203,12 @@ window.onload = function(){
 //------------------------------------------------------------------------
 	// 스크롤버튼을 클릭하면 아래로 이동
 
-	mainScroll();
 	function mainScroll(){
 		var scrollBtn = document.querySelectorAll(".scroll");
+		var mainPartner = document.querySelector(".main_partner")
+		var htmlValue = document.querySelector("html");
 		var aniAction;
 		
-		var htmlValue = document.querySelector("html");
 		for(var i=0;i<scrollBtn.length;i++){
 			scrollBtn[i].addEventListener("click", moveDown);
 		}
@@ -221,73 +228,78 @@ window.onload = function(){
 //------------------------------------------------------------------------
 	//메인 배경색 애니메이션효과
 
-	var html = document.querySelector("html");
-	var partnerBack = document.querySelector(".main_partner > .back")
-	var partnerMask = document.querySelector(".main_partner > .mask")
-	var recruitBack = document.querySelector(".recruit > .back")
-	var recruitMask = document.querySelector(".recruit > .mask")
-	var rugbyBack = document.querySelector(".rugby .back")
-	var rugbyMask = document.querySelector(".rugby .mask")
-	var mainPartner = document.querySelector(".main_partner")
-	var mainEtc = document.querySelector(".main_etc")
-	window.addEventListener("scroll", startMainCon);
-	function startMainCon(){
-		console.log(html.scrollTop)
-		if(html.scrollTop+500 > mainPartner.offsetTop){
-			partnerBack.classList.add("on");
-			partnerMask.classList.add("on");
-		}
-		if(html.scrollTop+530 > mainEtc.offsetTop){
-			recruitBack.classList.add("on");
-			recruitMask.classList.add("on");
-			rugbyBack.classList.add("on");
-			rugbyMask.classList.add("on");
-			window.removeEventListener("scroll", startMainCon);
+	function mainBackAni(){
+		var htmlValue = document.querySelector("html");
+		var partnerBack = document.querySelector(".main_partner > .back")
+		var partnerMask = document.querySelector(".main_partner > .mask")
+		var recruitBack = document.querySelector(".recruit > .back")
+		var recruitMask = document.querySelector(".recruit > .mask")
+		var rugbyBack = document.querySelector(".rugby > .back")
+		var rugbyMask = document.querySelector(".rugby > .mask")
+		var mainPartner = document.querySelector(".main_partner")
+		var mainEtc = document.querySelector(".main_etc")
+
+		window.addEventListener("scroll", startAni);
+		function startAni(){
+			if(htmlValue.scrollTop+500 > mainPartner.offsetTop){
+				partnerBack.classList.add("on");
+				partnerMask.classList.add("on");
+			}
+			if(htmlValue.scrollTop+530 > mainEtc.offsetTop){
+				recruitBack.classList.add("on");
+				recruitMask.classList.add("on");
+				rugbyBack.classList.add("on");
+				rugbyMask.classList.add("on");
+				window.removeEventListener("scroll", startAni);
+			}
 		}
 	}
 
 //------------------------------------------------------------------------
 	//partners 호버할때 나머지 어둡게
+	function partnerHover(){
+		var hoverBtn = document.querySelectorAll(".partners A");
 
-	var hoverBtn = document.querySelectorAll(".partners A");
-	choiceSize();
-	function choiceSize() {
-		var inWidth = window.innerWidth;
-		if (inWidth < 981) { 
-			for(var i=0;i<hoverBtn.length;i++){
-				hoverBtn[i].removeEventListener("mouseenter", hoverDark);
-				hoverBtn[i].removeEventListener("mouseleave", hoverLight);
-			}
-		} else {
-			for(var i=0;i<hoverBtn.length;i++){
-				hoverBtn[i].addEventListener("mouseenter", hoverDark);
-				hoverBtn[i].addEventListener("mouseleave", hoverLight);
+		choiceSize();
+		function choiceSize() {
+			var inWidth = window.innerWidth;
+			if (inWidth < 981) { 
+				for(var i=0;i<hoverBtn.length;i++){
+					hoverBtn[i].removeEventListener("mouseenter", hoverDark);
+					hoverBtn[i].removeEventListener("mouseleave", hoverLight);
+				}
+			} else {
+				for(var i=0;i<hoverBtn.length;i++){
+					hoverBtn[i].addEventListener("mouseenter", hoverDark);
+					hoverBtn[i].addEventListener("mouseleave", hoverLight);
+				}
 			}
 		}
+		
+		window.addEventListener("resize", function(){
+			clearTimeout(check);
+			var check = setTimeout(choiceSize,300)
+		});
+
+		function hoverDark(e){
+			for(var i=0;i<hoverBtn.length;i++){
+				if(hoverBtn[i] !== e.target){
+					hoverBtn[i].classList.add("off");
+				}
+			}
+		}
+		function hoverLight(){
+			for(var i=0;i<hoverBtn.length;i++){
+				hoverBtn[i].classList.remove("off");
+			}				
+		}
 	}
+
 	
-	window.addEventListener("resize", function(){
-		clearTimeout(check);
-		var check = setTimeout(choiceSize,300)
-	});
-
-	function hoverDark(e){
-		for(var i=0;i<hoverBtn.length;i++){
-			if(hoverBtn[i] !== e.target){
-				hoverBtn[i].classList.add("off");
-			}
-		}
-	}
-	function hoverLight(){
-		for(var i=0;i<hoverBtn.length;i++){
-			hoverBtn[i].classList.remove("off");
-		}				
-	}
 
 //------------------------------------------------------------------------
 	//footer familysite 열고 닫기
 	
-	familysite(); 
 	function familysite(){
 		var familyBtn = document.querySelector(".familyBtn");
 		var familySub = document.querySelector(".familysite > .sub")
