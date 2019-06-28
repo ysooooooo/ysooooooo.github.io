@@ -187,7 +187,6 @@ header.on {height: 370px;background-color: white;transition: all 0.2s ease;}
 /* header on end*/
 
 /* mobile header start */
-/* body{height: 573px; overflow: hidden;} */
 .mheader{
 	display: none;
 	position: absolute;
