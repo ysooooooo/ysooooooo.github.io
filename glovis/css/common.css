@@ -203,7 +203,7 @@ header.on {height: 370px;background-color: white;transition: all 0.2s ease;}
 .mheader > h1 > a{display: inline-block; margin-top: 19px;}
 .mheader > .open_btn{position: absolute; right: 15px; top: 35%;height: 13px;}
 .mheader > .menu{
-	visibility: hidden;
+	
 	position: absolute;
 	top: 0;
 	left: 100%;
@@ -214,7 +214,7 @@ header.on {height: 370px;background-color: white;transition: all 0.2s ease;}
 	backface-visibility: hidden;
 	transition: all 0.2s ease;
 }
-.mheader > .menu.on{left:0;visibility: visible;}
+.mheader > .menu.on{left:0;}
 .mheader > .menu > .top{padding: 14px 15px;background: #15245d;}
 .mheader > .menu > .top > .lang{
 	position: relative;
