@@ -190,7 +190,6 @@ header.on {height: 370px;background-color: white;transition: all 0.2s ease;}
 /* body{height: 573px; overflow: hidden;} */
 .mheader{
 	display: none;
-	/* overflow: hidden; */
 	position: absolute;
     top: 0;
     left: 0;
