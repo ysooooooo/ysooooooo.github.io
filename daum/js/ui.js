@@ -1,5 +1,23 @@
 window.onload = function(){
 
+    //사이드메뉴
+    sideMenu();
+    function sideMenu(){
+        var openBtn = document.querySelector(".more_btn")
+        var closeBtn = document.querySelector(".side_close");
+        var sideMenuEl = document.querySelector(".side_menu");
+
+        openBtn.addEventListener("click", function(e){
+            e.preventDefault();
+            sideMenuEl.classList.add("on");
+        })
+        
+        closeBtn.addEventListener("click", function(e){
+            e.preventDefault();
+            sideMenuEl.classList.remove("on");
+        })
+    }
+
     //etcList의 각 메뉴를 클릭하면 그 메뉴를 보여주기
     etcList();
     function etcList(){
@@ -32,6 +50,7 @@ window.onload = function(){
         });
     }
     
+    //실시간이슈 각 메뉴를 클릭하면 그 메뉴를 보여주기
     realTimeIssue();
     function realTimeIssue(){
         var hotIssueBtn = document.querySelector(".hotissue > .menu2 > ul");
