@@ -30,6 +30,8 @@ window.onload = function(){
 		var srch_img = header.querySelector(".srch_img");
 		
 		header_tab.addEventListener("mouseover", header_open)
+		header_tab.addEventListener("mouseout", header_close)
+		
 		function header_open(){
 			header_tab.classList.add("on");
 			header.classList.add("on");
@@ -37,7 +39,7 @@ window.onload = function(){
 			header_img.setAttribute("src", "images/logo_on.png");
 			srch_img.setAttribute("src", "images/header_srch_on.png");
 		}
-		header_tab.addEventListener("mouseout", header_close)
+		
 		function header_close(){
 			header_tab.classList.remove("on");
 			header.classList.remove("on");
@@ -52,11 +54,14 @@ window.onload = function(){
 
 	function langClick(){
 		var lang = document.querySelector(".lang");
+
 		lang.addEventListener("click", lang_open)
+		lang.addEventListener("mouseleave", lang_close)
+		
 		function lang_open(){
 			lang.className = "lang on";
 		}
-		lang.addEventListener("mouseleave", lang_close)
+
 		function lang_close(){
 			lang.className = "lang";
 		}
@@ -77,6 +82,7 @@ window.onload = function(){
 
 		openBtn.addEventListener("click", menuOpen);
 		closeBtn.addEventListener("click", menuClose);
+
 		function menuOpen(e){
 			e.preventDefault();
 			mMenu.classList.add("on");
@@ -90,6 +96,7 @@ window.onload = function(){
 			htmlEl.style.height = "auto";
 			htmlEl.style.overflow = "auto";
 			mText.style.zIndex = "9700"
+
 			for(var i=0;i<subEls.length;i++){ // 메뉴를 닫으면 열려있던 서브메뉴들을 전부 닫아준다
 				subEls[i].classList.remove("on");
 				subEls[i].style.height = "0";
@@ -103,7 +110,6 @@ window.onload = function(){
 
 	function mobileMenuSub(){
 		var mHeader_tab = document.querySelector(".mHeader_tab");
-		
 		var subEls = mHeader_tab.querySelectorAll(".sub");
 		var tabTitleEls = mHeader_tab.querySelectorAll(".tabTitle");
 		
@@ -294,8 +300,6 @@ window.onload = function(){
 			}				
 		}
 	}
-
-	
 
 //------------------------------------------------------------------------
 	//footer familysite 열고 닫기
