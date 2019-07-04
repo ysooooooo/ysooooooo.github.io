@@ -1,4 +1,5 @@
 @charset "utf-8";
+
 html {
 	font-size:100%;
 }
@@ -223,8 +224,7 @@ header > .realtime_box > .issue > a{position: absolute;right: 20px;}
 	top: 0;
 	right: -100%;
 	width: 360px;
-	height: 881px;
-	z-index: 999;
+	height: 832px;
 	transition: all 0.7s ease;
 }
 .side_menu.on > .inner_side{right: 0;}
@@ -784,5 +784,4 @@ footer > .copy_info > a{color: #888;}
 	.contents.right{float: right; width: 50%;box-sizing: border-box;}
 	.etclist{margin-top: 0;}
 	.contents_page{display: block;}
-
 }

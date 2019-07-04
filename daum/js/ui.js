@@ -3,6 +3,7 @@ window.onload = function(){
     //사이드메뉴
     sideMenu();
     function sideMenu(){
+        var body = document.querySelector("body");
         var openBtn = document.querySelector(".more_btn")
         var closeBtn = document.querySelector(".side_close");
         var sideMenuEl = document.querySelector(".side_menu");
@@ -10,6 +11,7 @@ window.onload = function(){
         openBtn.addEventListener("click", function(e){
             e.preventDefault();
             sideMenuEl.classList.add("on");
+            sideMenuEl.style.height = body.clientHeight + "px";
         })
         
         closeBtn.addEventListener("click", function(e){
@@ -77,12 +79,4 @@ window.onload = function(){
             }
         });
     }
-
-
-
-
-
-
-
-
 }
