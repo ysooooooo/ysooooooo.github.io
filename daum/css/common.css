@@ -1,5 +1,4 @@
 @charset "utf-8";
-
 html {
 	font-size:100%;
 }
@@ -225,6 +224,7 @@ header > .realtime_box > .issue > a{position: absolute;right: 20px;}
 	right: -100%;
 	width: 360px;
 	height: 881px;
+	z-index: 999;
 	transition: all 0.7s ease;
 }
 .side_menu.on > .inner_side{right: 0;}
